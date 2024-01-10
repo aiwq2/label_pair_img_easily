@@ -248,9 +248,12 @@ if __name__=='__main__':
     # 参数调整部分,主要是图片的起始index和数量，以及文件名的前缀file_prefix用来做标识
     img_start_index=0
     img_nums=4000
-    editor_name='zhangsan'
+    if is_pair:
+        label_class='pair'
+    else:
+        label_class='single'
     edit_range=str(img_start_index)+'-'+str(img_start_index+img_nums)
-    file_prefix='-'.join([editor_name,edit_range])+'-'
+    file_prefix='-'.join([label_class,edit_range])+'-'
     # file_prefix的最终格式即为{editor_name}-{img_start_index}-{img_start_index+img_nums}-
 
     # 图片路径
